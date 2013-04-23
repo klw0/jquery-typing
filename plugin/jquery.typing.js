@@ -78,5 +78,10 @@
         $elem.blur(function (event) {
             stopTyping(event, 0);
         });
+
+        // Allow stopTyping to be triggered manually
+        $elem.on('typing.stop', function() {
+            stopTyping('manual', 0);
+        });
     }
 })(jQuery);
